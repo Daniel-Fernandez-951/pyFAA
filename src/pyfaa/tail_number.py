@@ -37,6 +37,3 @@ class TailNumber:
                 except AttributeError:
                     continue
             return soup_data
-        
-
-print(TailNumber(tail_num="n231se").as_dict())
