@@ -16,7 +16,8 @@ class DataSoup:
 
     def make_soup(self):
         req = requests.get(str(self.url), params=self.url_params)
-        soup = BeautifulSoup(req.content, "html.parser")
+        strainer = SoupStrainer("td")
+        soup = BeautifulSoup(req.content, "html.parser", parse_only=strainer)
         if req.status_code != 200:
             return None
         return soup
